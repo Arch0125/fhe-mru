@@ -5,6 +5,7 @@ import { Playground } from "@stackr/sdk/plugins";
 import { schemas } from "./actions.ts";
 import { ERC20Machine, mru } from "./erc20.ts";
 import { reducers } from "./reducers.ts";
+import cors from "cors"
 
 console.log("Starting server...");
 
@@ -12,6 +13,7 @@ const erc20Machine = mru.stateMachines.get<ERC20Machine>("erc-20");
 
 const app = express();
 app.use(express.json());
+app.use(cors())
 
 const playground = Playground.init(mru);
 

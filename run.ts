@@ -19,6 +19,9 @@ const getBody = async (actionName: ActionName, wallet: Wallet) => {
           encryptedState: '1',
         };
 
+
+  console.log(domain)
+
   const signature = await wallet.signTypedData(
     domain,
     schemas[actionName].EIP712TypedData.types,
