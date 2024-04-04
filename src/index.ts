@@ -13,7 +13,7 @@ const erc20Machine = mru.stateMachines.get<ERC20Machine>("erc-20");
 
 const app = express();
 app.use(express.json());
-app.use(cors())
+app.use(cors());
 
 const playground = Playground.init(mru);
 
